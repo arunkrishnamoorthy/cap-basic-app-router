@@ -1,0 +1,26 @@
+{
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/app/app1/(.*)$",
+      "target": "$1",
+      "localDir": "./app1/webapp",
+      "authenticationType": "xsuaa",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/app/app2/(.*)$",
+      "target": "$1",
+      "localDir": "./app2/webapp",
+      "authenticationType": "xsuaa",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "srv-api",
+      "authenticationType": "none",
+      "csrfProtection": true
+    }
+  ]
+}

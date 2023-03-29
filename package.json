@@ -1,0 +1,41 @@
+{
+  "name": "exercise2",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^6",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "hdb": "^0.19.0",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.108.1",
+    "sqlite3": "^5.0.4"
+  },
+  "scripts": {
+    "start": "cds run",
+    "watch-app1": "cds watch --open app1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-app2": "cds watch --open app2/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana-cloud"
+      },
+      "auth": {
+        "kind": "xsuaa"
+      },
+      "approuter": {
+        "kind": "cloudfoundry"
+      }
+    }
+  },
+  "sapux": [
+    "app/app1",
+    "app/app2"
+  ]
+}
