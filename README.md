@@ -40,3 +40,27 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
    name of db-deployer: `{appname}-db-deployer`
    name of service: `{appname}-srv`
 8. Add the app router using the command `cds add approuter` 
+9. In the app router, set the path for application1 and application2. 
+    ```
+    {
+      "source": "^/app/app1/(.*)$",
+      "target": "$1",
+      "localDir": "./app1/webapp",
+      "authenticationType": "none",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/app/app2/(.*)$",
+      "target": "$1",
+      "localDir": "./app2/webapp",
+      "authenticationType": "none",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    ```
+    The local directory is from where the app path begins from.
+9. Adding the app router, added a new module in the mta.yaml file. 
+    App router is named with the same name as application. {appname}
+10. Adding app router also added a new resource for authorization. 
+    The authroization resource is named {appname}-xsuaa. 
+11. Since the CAP service is not authenticated, the service does not return data. 
+12. Only the app router functionality is working. 
