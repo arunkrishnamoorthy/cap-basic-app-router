@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to your new project.
+This application demo the basic application router configuration. The app router is unmanaged. 
 
 It contains these folders and files, following our recommended project layout:
 

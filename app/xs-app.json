@@ -1,25 +1,30 @@
 {
-  "authenticationMethod": "none",
+  "authenticationMethod": "route",
   "routes": [
     {
       "source": "^/app/app1/(.*)$",
       "target": "$1",
       "localDir": "./app1/webapp",
-      "authenticationType": "none",
+      "authenticationType": "xsuaa",
       "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
       "source": "^/app/app2/(.*)$",
       "target": "$1",
       "localDir": "./app2/webapp",
-      "authenticationType": "none",
+      "authenticationType": "xsuaa",
       "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/user-api(.*)",
+      "target": "$1",
+      "service": "sap-approuter-userapi"
     },
     {
       "source": "^/(.*)$",
       "target": "$1",
       "destination": "srv-api",
-      "authenticationType": "none",
+      "authenticationType": "xsuaa",
       "csrfProtection": true
     }
   ]
