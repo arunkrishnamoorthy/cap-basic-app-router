@@ -1,18 +1,18 @@
 {
-  "authenticationMethod": "route",
+  "authenticationMethod": "none",
   "routes": [
     {
       "source": "^/app/app1/(.*)$",
       "target": "$1",
       "localDir": "./app1/webapp",
-      "authenticationType": "xsuaa",
+      "authenticationType": "none",
       "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
       "source": "^/app/app2/(.*)$",
       "target": "$1",
       "localDir": "./app2/webapp",
-      "authenticationType": "xsuaa",
+      "authenticationType": "none",
       "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
